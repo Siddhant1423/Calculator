@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #a154e9;
+}
+h1{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+    color: white;
+}
+.container{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 8px black solid;
+    border-radius: 6px;
+    padding: 8px;
+    background-color: white;
+}
+.input-container{
+    display: flex;
+}
+.input-text{
+    height: 100px;
+    width: 300px;
+    
+}
+.input-display{
+    box-sizing: border-box;
+    height: 50px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    text-align: right;
+}
+
+button{
+    font-size: 28px;
+    font-weight: bolder;
+    height: 96px;
+    width: 96px;
+    box-sizing: content-box;
+}
+
+.btn-container{
+    display: flex;
+    height: 400px;
+    width: 400px;
+}
+.btn-num{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 384px;
+}
+.btn-operand{
+    display: flex;
+    flex-direction: column;
+}
+
+#cancel-btn, #allclear-btn, #equals-btn{
+    background-color: orange;
+}
+
+.operator{
+    background-color: orange;
+}
