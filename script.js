@@ -23,3 +23,27 @@ const operate = (a, b, operand) => {
         return divide(a, b);
     }
 }
+
+const getOperand = () =>{
+    
+}
+const displayInput = document.querySelector("#display-one")
+
+const btn = document.querySelectorAll('.btn-number');
+btn.forEach((button)=>{
+    button.addEventListener("click",()=>{
+        let value = button.getAttribute('id')
+        displayInput.textContent += value;
+        console.log(value);
+    })
+
+});
+
+const btnOperand = document.querySelectorAll(".operator");
+btnOperand.forEach((button)=>{
+    button.addEventListener('click',() => {
+        let op = button.getAttribute('data-value')
+        displayInput.textContent += " "+op+" ";
+        console.log(op)
+    })
+})
