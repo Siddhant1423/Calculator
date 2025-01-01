@@ -34,7 +34,7 @@ const handleClick = () => {
 }
 
 let result = 0;
-
+let count = 0;
 const displayInput = document.querySelector("#display-one")
 const displayInputTwo = document.querySelector("#display-two")
 
@@ -55,12 +55,15 @@ const btnOperand = document.querySelectorAll(".operator");
 btnOperand.forEach((button)=>{
     button.addEventListener('click',() => {
         let op = button.getAttribute('data-value')
-        displayInput.textContent += ` ${op} `;
-        console.log(op)
+        if(count == 0){
+            displayInput.textContent += ` ${op} `;
+            console.log(op)
+        }else{
+            displayInput.textContent = ""
+            displayInput.textContent += result + ` ${op} `;
+        }
         isOperatorClicked = true;
         handleClick();
-
-
     },)
 })
 
@@ -68,24 +71,18 @@ btnOperand.forEach((button)=>{
 
 const equalbtn = document.querySelector('#equals-btn');
 equalbtn.addEventListener('click',()=>{
-
-    if(result == 0 ){
-
-        let inputNumber = displayInput.textContent;
+    let inputNumber = displayInput.textContent;
         let splitValues = inputNumber.split(" ");
         let a = splitValues[0];
         let b = splitValues[2]
         let opr = splitValues[1]
-        
         result = operate(a,b,opr)
         displayInputTwo.textContent = result.toFixed(3);
         isOperatorClicked = false;
         handleClick();
         console.log(inputNumber);
-    }
-    else{
-        
-    }
+        count++;
+        console.log(count)
 
     
 });
@@ -96,6 +93,7 @@ const resetbtn = document.querySelector('#allclear-btn');
 resetbtn.addEventListener('click',() => {
     displayInput.textContent = "";
     displayInputTwo.textContent = "";
+    count = 0;
 })
 
 // BACKSPACE BUTTON ===================
