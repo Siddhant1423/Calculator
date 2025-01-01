@@ -44,7 +44,6 @@ btn.forEach((button)=>{
     button.addEventListener("click",()=>{
         let value = button.getAttribute('id')
         displayInput.textContent += value;
-        console.log(value);
     })
 
 });
@@ -57,7 +56,6 @@ btnOperand.forEach((button)=>{
         let op = button.getAttribute('data-value')
         if(count == 0){
             displayInput.textContent += ` ${op} `;
-            console.log(op)
         }else{
             displayInput.textContent = ""
             displayInput.textContent += result + ` ${op} `;
@@ -80,11 +78,7 @@ equalbtn.addEventListener('click',()=>{
         displayInputTwo.textContent = result.toFixed(3);
         isOperatorClicked = false;
         handleClick();
-        console.log(inputNumber);
-        count++;
-        console.log(count)
-
-    
+        count++; 
 });
 
 // RESET BUTTON =======================
